@@ -11,17 +11,17 @@
     </div>
     <script type="text/javascript">
 
-      <!-- Take the data, and stick it in 'home' as a string -->
+      <!-- Takes the data, and sticks it in 'home' as a string (using stringify, which isn't pretty) -->
       const fillData = (data) => {
         document.getElementById('home').innerHTML = JSON.stringify(data)
       }
 
       <!-- Fetch the data -->
       fetch('https://ovrstat.com/stats/pc/chadlamon-1426')
+        // Turn the data into JSON
         .then(response => response.json())
-        .then(
-          data => fillData(data)
-        );
+        // Send the data to fillData
+        .then(data => fillData(data));
 
     </script>
   </body>
