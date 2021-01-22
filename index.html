@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <div id="home">
+
+    </div>
+    <script type="text/javascript">
+      //'https://ovrstat.com/stats/pc/chadlamon-1426'
+      const fillData = (data) => {
+        console.log(data)
+        document.getElementById('home').innerHTML = JSON.stringify(data)
+      }
+
+      fetch('https://ovrstat.com/stats/pc/chadlamon-1426')
+        .then(response => response.json())
+        .then(
+          data => fillData(data)
+        );
+    </script>
+  </body>
+</html>
