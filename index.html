@@ -6,14 +6,14 @@
   </head>
   <body>
 
-    <div id="home">
-      <!-- Here's where the data ends up -->
-    </div>
+    <pre id="home">
+      <!-- Here's where the data ends up.  A <pre> tag keeps JSON pretty -->
+    </pre>
     <script type="text/javascript">
 
-      <!-- Takes the data, and sticks it in 'home' as a string (using stringify, which isn't pretty) -->
+      <!-- Takes the data, and sticks it in 'home'.  Stringify with (undefined, 2) makes it more readable. -->
       const fillData = (data) => {
-        document.getElementById('home').innerHTML = JSON.stringify(data)
+        document.getElementById('home').innerHTML = JSON.stringify(data, undefined, 2)
       }
 
       <!-- Fetch the data -->
