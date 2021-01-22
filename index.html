@@ -11,14 +11,14 @@
     </pre>
     <script type="text/javascript">
 
-      <!-- Takes the data, and sticks it in 'home'.  Stringify with (undefined, 2) makes it more readable. -->
+      // Takes the data, and sticks it in 'home'.  Stringify with (undefined, 2) makes it more readable.
       const fillData = (data) => {
         // Adds the currentTime.  This is generally easy, but this adds it to the TOP of the JSON
         const dataWithTime = {currentTime: new Date().toTimeString(), ...data}
         document.getElementById('home').innerHTML = JSON.stringify(dataWithTime, undefined, 2)
       }
 
-      <!-- Fetch the data -->
+      // Fetch the data
       fetch('https://ovrstat.com/stats/pc/chadlamon-1426')
         // Turn the data into JSON
         .then(response => response.json())
