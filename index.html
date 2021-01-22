@@ -13,7 +13,9 @@
 
       <!-- Takes the data, and sticks it in 'home'.  Stringify with (undefined, 2) makes it more readable. -->
       const fillData = (data) => {
-        document.getElementById('home').innerHTML = JSON.stringify(data, undefined, 2)
+        // Adds the currentTime.  This is generally easy, but this adds it to the TOP of the JSON
+        const dataWithTime = {currentTime: new Date().toTimeString(), ...data}
+        document.getElementById('home').innerHTML = JSON.stringify(dataWithTime, undefined, 2)
       }
 
       <!-- Fetch the data -->
